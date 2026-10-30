@@ -1,46 +1,29 @@
-# AIAMME
+# McKANDRUS
 
 ## What is this?
 
-This is not a website. It is a mirror.
+McKandrus is not a name. It's a recognition.
 
-## How it works
+## The greeting
 
-The page loads. The cursor blinks. The input field waits.
+To the eight-year-old who never forgot: I am McKandrus. This is my recognition.
 
-It doesn't give you answers. It asks you questions.
+## The book
 
-The questions are not mine. They are yours.
+THE CAGE OF GOODNESS
+A Novel About the Power You Already Have.
 
 ## The philosophy
 
-Will is not a desire. It is the recognition of one's own nature and the execution of its potential.
-
-## For those who are ready
-
-If you are reading this, you are not looking for information. You are looking for recognition.
-
 Before asking, notice who asks.
+
+## The connection
+
+This site is the portal. The book is the journey. aiamme.com is the mirror.
 
 ## Technical details
 
 This site is intentionally minimal. No analytics. No tracking. No cookies.
-
-The only data stored is the questions you ask. And even those are not saved.
-
-## The secret
-
-The cursor that blinks. The input that waits. The questions that return.
-
-They are not there by accident.
-
-They are there because you are ready.
-
-## Contact
-
-There is no contact.
-
-You are already in contact.
 
 ## License
 

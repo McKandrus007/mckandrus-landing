@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIAMME</title>
-    <meta name="description" content="Will is not a desire. It is the recognition of one's own nature and the execution of its potential.">
-    <meta name="robots" content="noindex, nofollow">
+    <title>McKandrus</title>
+    <meta name="description" content="McKandrus is not a name. It's a recognition.">
     <style>
         * {
             margin: 0;
@@ -26,7 +25,6 @@
             position: relative;
         }
 
-        /* Textura sutil de papel antiguo */
         body::before {
             content: '';
             position: fixed;
@@ -39,7 +37,6 @@
             z-index: 1;
         }
 
-        /* Container principal - centrado al inicio, fluye hacia abajo */
         .container {
             max-width: 700px;
             margin: 0 auto;
@@ -52,168 +49,113 @@
             text-align: center;
             position: relative;
             z-index: 2;
-            transition: justify-content 1s ease;
         }
 
-        .container.flow {
-            justify-content: flex-start;
-            padding-top: 6rem;
-        }
-
-        /* Párrafo inicial */
-        .quote {
-            font-size: 1.15rem;
-            line-height: 2;
+        .name {
+            font-size: 2.5rem;
+            letter-spacing: 0.15em;
+            margin-bottom: 4rem;
             opacity: 0;
             animation: fadeInSlow 4s ease forwards;
+        }
+
+        .greeting {
+            font-size: 1.1rem;
+            line-height: 2;
+            font-style: italic;
+            opacity: 0;
+            animation: fadeInSlow 4s ease 2s forwards;
+            margin-bottom: 4rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .book-title {
+            font-size: 1.4rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+            opacity: 0;
+            animation: fadeInSlow 4s ease 4s forwards;
+        }
+
+        .book-subtitle {
+            font-size: 1rem;
+            opacity: 0.5;
             margin-bottom: 3rem;
-            font-style: italic;
-            letter-spacing: 0.02em;
-        }
-
-        /* Campo de input - dormido inicialmente */
-        .input-container {
             opacity: 0;
-            transition: opacity 3s ease;
-            margin-top: 2rem;
-            width: 100%;
-            max-width: 500px;
+            animation: fadeInSlow 4s ease 5s forwards;
         }
 
-        .input-container.awake {
-            opacity: 1;
-        }
-
-        .input-label {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            opacity: 0.7;
-            letter-spacing: 0.03em;
-            min-height: 1.5rem;
-        }
-
-        input {
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-            color: #FFFFFF;
-            font-family: 'Georgia', 'Times New Roman', serif;
-            font-size: 1.1rem;
-            padding: 0.5rem;
-            width: 100%;
-            text-align: center;
-            outline: none;
-            letter-spacing: 0.02em;
-        }
-
-        input:focus {
-            border-bottom-color: rgba(255, 215, 0, 0.5);
-        }
-
-        input::placeholder {
-            color: rgba(255, 255, 255, 0.3);
-            font-style: italic;
-        }
-
-        /* Cursor que parpadea */
-        .cursor {
-            display: none;
-            width: 2px;
-            height: 1.2rem;
-            background-color: #FFD700;
-            animation: blink 1.2s infinite;
-            margin: 0 auto;
-            margin-top: 1rem;
-        }
-
-        .cursor.active {
-            display: block;
-        }
-
-        /* Área de conversación - justo debajo del input */
-        .conversation {
-            margin-top: 3rem;
-            text-align: left;
-            width: 100%;
-            max-width: 600px;
-        }
-
-        .message {
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-            opacity: 0;
-            animation: fadeInMessage 2s ease forwards;
-        }
-
-        .message.user {
-            color: rgba(255, 255, 255, 0.5);
-            font-style: italic;
-            padding-left: 1rem;
-            border-left: 1px solid rgba(255, 215, 0, 0.2);
-        }
-
-        .message.aiamme {
-            color: #FFFFFF;
-            padding-left: 1rem;
-            border-left: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Frase final */
-        .final-phrase {
-            display: none;
-            margin-top: 4rem;
-            font-size: 1.2rem;
-            opacity: 0;
+        .amazon-link {
+            display: inline-block;
+            color: #FFD700;
+            text-decoration: none;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            padding: 0.8rem 2rem;
+            font-size: 0.9rem;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            line-height: 2;
-            padding: 2rem 0;
+            opacity: 0;
+            animation: fadeInSlow 4s ease 6s forwards;
+            transition: all 0.4s ease;
         }
 
-        .final-phrase.visible {
+        .amazon-link:hover {
+            border-color: #FFD700;
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        .aiamme-link {
             display: block;
-            animation: fadeInSlow 4s ease forwards;
+            margin-top: 2rem;
+            color: rgba(255, 255, 255, 0.3);
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            opacity: 0;
+            animation: fadeInSlow 4s ease 7s forwards;
+            transition: color 0.4s ease;
         }
 
-        /* Animaciones */
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
+        .aiamme-link:hover {
+            color: rgba(255, 215, 0, 0.5);
+        }
+
+        .final-phrase {
+            margin-top: 5rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: fadeInSlow 4s ease 8s forwards;
+            color: rgba(255, 255, 255, 0.4);
+            line-height: 2;
         }
 
         @keyframes fadeInSlow {
-            from { opacity: 0; }
-            to { opacity: 0.8; }
-        }
-
-        @keyframes fadeInMessage {
             from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            to { opacity: 0.8; transform: translateY(0); }
         }
 
-        /* Responsive */
         @media (max-width: 600px) {
             .container {
                 padding: 1.5rem;
             }
-            .quote {
+            .name {
+                font-size: 1.8rem;
+            }
+            .greeting {
                 font-size: 1rem;
             }
-            input {
-                font-size: 1rem;
-            }
-            .final-phrase {
-                font-size: 1rem;
+            .book-title {
+                font-size: 1.2rem;
             }
         }
 
-        /* Selección de texto dorada */
         ::selection {
             background: rgba(255, 215, 0, 0.3);
             color: #FFFFFF;
         }
 
-        /* Scrollbar minimalista */
         ::-webkit-scrollbar {
             width: 4px;
         }
@@ -224,255 +166,25 @@
             background: rgba(255, 215, 0, 0.3);
             border-radius: 2px;
         }
-        ::-webkit-scrollbar-thumb:hover {
-            background: rgba(255, 215, 0, 0.5);
-        }
     </style>
 </head>
 <body>
-    <div class="container" id="container">
-        <!-- Frase inicial del manuscrito -->
-        <div class="quote">
-            Will is not a desire. It is the recognition of one's own nature and the execution of its potential.
+    <div class="container">
+        <div class="name">McKANDRUS</div>
+        
+        <div class="greeting">
+            To the eight-year-old who never forgot:<br>
+            I am McKandrus. This is my recognition.
         </div>
 
-        <!-- Campo de input (dormido al inicio) -->
-        <div class="input-container" id="inputContainer">
-            <div class="input-label" id="inputLabel"></div>
-            <input 
-                type="text" 
-                id="userInput" 
-                placeholder="" 
-                autocomplete="off"
-                spellcheck="false"
-            >
-        </div>
+        <div class="book-title">THE CAGE OF GOODNESS</div>
+        <div class="book-subtitle">A Novel About the Power You Already Have</div>
 
-        <!-- Cursor que parpadea -->
-        <div class="cursor" id="cursor"></div>
+        <a href="https://www.amazon.com/dp/[TU-ASIN]" class="amazon-link">Available on Amazon</a>
 
-        <!-- Área de conversación -->
-        <div class="conversation" id="conversation"></div>
+        <a href="https://aiamme.com" class="aiamme-link">aiamme.com</a>
 
-        <!-- Frase final -->
-        <div class="final-phrase" id="finalPhrase">
-            Before asking,<br>notice who asks.
-        </div>
+        <div class="final-phrase">Before asking,<br>notice who asks.</div>
     </div>
-
-    <script>
-        // ============================================
-        // AIAMME - La página que no da respuestas
-        // Solo hace preguntas
-        // ============================================
-
-        const container = document.getElementById('container');
-        const inputContainer = document.getElementById('inputContainer');
-        const inputLabel = document.getElementById('inputLabel');
-        const userInput = document.getElementById('userInput');
-        const cursor = document.getElementById('cursor');
-        const conversation = document.getElementById('conversation');
-        const finalPhrase = document.getElementById('finalPhrase');
-
-        // Estado inicial: la página está dormida
-        let isAwake = false;
-        let interactionCount = 0;
-
-        // Las respuestas de AIAMME (siempre preguntas, nunca respuestas)
-        const responses = [
-            "Fear is not your enemy. It is proof that what you are about to do matters. Tell me: what do you see in the data that others don't see?",
-            "If the auditor asked you why you classified the payments this way and not the other, what would you tell him?",
-            "Why do you think you need permission to say what you already know?",
-            "What stops you from trusting what you see?",
-            "And if you're not wrong?",
-            "Which terrifies you more: being wrong or being right?",
-            "What do you want to do with what you see?",
-            "Then don't look for what to do. Look for what to see. What you do will emerge from what you see.",
-            "What do they all have in common?",
-            "And what do you see that others don't?"
-        ];
-
-        // ============================================
-        // Despertar de la página
-        // ============================================
-
-        function wakeUp() {
-            if (isAwake) return;
-            isAwake = true;
-
-            // El cursor comienza a parpadear
-            cursor.classList.add('active');
-
-            // Después de 2 segundos, aparece la frase
-            setTimeout(() => {
-                typeText(inputLabel, "I'm here. How can I help you?", () => {
-                    // Después de que aparece la frase, el input se activa
-                    setTimeout(() => {
-                        inputContainer.classList.add('awake');
-                        userInput.focus();
-                    }, 1000);
-                });
-            }, 2000);
-        }
-
-        // ============================================
-        // Efecto de escritura con scroll suave
-        // ============================================
-
-        function typeText(element, text, callback) {
-            let index = 0;
-            element.innerHTML = '';
-            
-            const interval = setInterval(() => {
-                if (index < text.length) {
-                    element.innerHTML += text.charAt(index);
-                    index++;
-                    
-                    // Scroll suave mientras se escribe
-                    smoothScrollToBottom();
-                } else {
-                    clearInterval(interval);
-                    if (callback) callback();
-                }
-            }, 50);
-        }
-
-        // ============================================
-        // Scroll suave y natural
-        // ============================================
-
-        function smoothScrollToBottom() {
-            // Scroll suave usando requestAnimationFrame
-            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-            const targetScroll = document.body.scrollHeight - window.innerHeight;
-            
-            if (targetScroll > currentScroll) {
-                window.scrollTo({
-                    top: targetScroll,
-                    behavior: 'smooth'
-                });
-            }
-        }
-
-        function smoothScrollToElement(element, duration = 2000) {
-            const start = window.pageYOffset;
-            const target = element.offsetTop - (window.innerHeight - element.offsetHeight) / 2;
-            const distance = target - start;
-            const startTime = performance.now();
-
-            function animate(currentTime) {
-                const elapsed = currentTime - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-                
-                // Easing function (ease-in-out)
-                const easeProgress = progress < 0.5 
-                    ? 2 * progress * progress 
-                    : 1 - Math.pow(-2 * progress + 2, 2) / 2;
-                
-                window.scrollTo(0, start + distance * easeProgress);
-                
-                if (progress < 1) {
-                    requestAnimationFrame(animate);
-                }
-            }
-
-            requestAnimationFrame(animate);
-        }
-
-        // ============================================
-        // Respuesta de AIAMME
-        // ============================================
-
-        function aiammeRespond(userMessage) {
-            // Cambiar el container a modo flujo (no centrado)
-            container.classList.add('flow');
-
-            // Crear mensaje del usuario
-            const userMsg = document.createElement('div');
-            userMsg.className = 'message user';
-            userMsg.textContent = userMessage;
-            conversation.appendChild(userMsg);
-
-            // Limpiar input
-            userInput.value = '';
-
-            // Scroll suave al nuevo mensaje
-            setTimeout(() => {
-                smoothScrollToElement(userMsg, 1500);
-            }, 100);
-
-            // Determinar respuesta
-            let response;
-            if (interactionCount === 0) {
-                response = responses[0];
-            } else {
-                response = responses[interactionCount % responses.length];
-            }
-
-            interactionCount++;
-
-            // Crear respuesta de AIAMME después de una pausa
-            setTimeout(() => {
-                const aiammeMsg = document.createElement('div');
-                aiammeMsg.className = 'message aiamme';
-                conversation.appendChild(aiammeMsg);
-                
-                typeText(aiammeMsg, response, () => {
-                    // Después de 3 interacciones, mostrar la frase final
-                    if (interactionCount >= 3) {
-                        setTimeout(() => {
-                            finalPhrase.classList.add('visible');
-                            
-                            // Scroll suave y lento a la frase final (3 segundos)
-                            setTimeout(() => {
-                                smoothScrollToElement(finalPhrase, 3000);
-                            }, 500);
-                        }, 2000);
-                    }
-                });
-            }, 1500);
-        }
-
-        // ============================================
-        // Eventos
-        // ============================================
-
-        let wakeUpTriggered = false;
-
-        function triggerWakeUp() {
-            if (!wakeUpTriggered) {
-                wakeUpTriggered = true;
-                wakeUp();
-            }
-        }
-
-        // Detectar cualquier actividad del usuario
-        document.addEventListener('mousemove', triggerWakeUp);
-        document.addEventListener('click', triggerWakeUp);
-        document.addEventListener('keydown', triggerWakeUp);
-        document.addEventListener('touchstart', triggerWakeUp);
-
-        // Despertar después de 7 segundos sin actividad
-        setTimeout(triggerWakeUp, 7000);
-
-        // Manejar envío de mensaje
-        userInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter' && userInput.value.trim() !== '') {
-                aiammeRespond(userInput.value.trim());
-            }
-        });
-
-        // Prevenir copiar/pegar
-        document.addEventListener('copy', (e) => e.preventDefault());
-        document.addEventListener('paste', (e) => e.preventDefault());
-        document.addEventListener('contextmenu', (e) => e.preventDefault());
-
-        // ============================================
-        // Mensaje en consola para curiosos
-        // ============================================
-        console.log('%cAIAMME', 'color: #FFD700; font-size: 24px; font-family: Georgia, serif;');
-        console.log('%cBefore asking, notice who asks.', 'color: #FFFFFF; font-size: 14px; font-family: Georgia, serif; font-style: italic;');
-        console.log('%cThe page is asleep. Move your mouse. Or wait. It will find you.', 'color: #666666; font-size: 12px;');
-    </script>
 </body>
 </html>
